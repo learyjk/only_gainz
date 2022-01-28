@@ -13,7 +13,7 @@ class UserCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(20.0),
+      padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20),
       child: SizedBox(
         height: MediaQuery.of(context).size.height / 1.4,
         width: MediaQuery.of(context).size.width,
@@ -50,8 +50,8 @@ class UserCard extends StatelessWidget {
               ),
             ),
             Positioned(
-              bottom: 30,
-              left: 20,
+              bottom: 10,
+              left: 10,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
