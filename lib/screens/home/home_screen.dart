@@ -27,21 +27,27 @@ class HomeScreen extends StatelessWidget {
             return Column(
               children: [
                 Expanded(
-                  child: Draggable(
-                    child: UserCard(user: state.users[0]),
-                    feedback: UserCard(user: state.users[0]),
-                    childWhenDragging: UserCard(user: state.users[1]),
-                    onDragEnd: (drag) {
-                      if (drag.velocity.pixelsPerSecond.dx < 0) {
-                        context.read<SwipeBloc>()
-                          ..add(SwipeLeftEvent(user: state.users[0]));
-                        print('Swiped Left');
-                      } else {
-                        context.read<SwipeBloc>()
-                          ..add(SwipeRightEvent(user: state.users[0]));
-                        print('Swiped Right');
-                      }
+                  child: InkWell(
+                    onDoubleTap: () {
+                      Navigator.pushNamed(context, '/users',
+                          arguments: state.users[0]);
                     },
+                    child: Draggable(
+                      child: UserCard(user: state.users[0]),
+                      feedback: UserCard(user: state.users[0]),
+                      childWhenDragging: UserCard(user: state.users[1]),
+                      onDragEnd: (drag) {
+                        if (drag.velocity.pixelsPerSecond.dx < 0) {
+                          context.read<SwipeBloc>()
+                            ..add(SwipeLeftEvent(user: state.users[0]));
+                          print('Swiped Left');
+                        } else {
+                          context.read<SwipeBloc>()
+                            ..add(SwipeRightEvent(user: state.users[0]));
+                          print('Swiped Right');
+                        }
+                      },
+                    ),
                   ),
                 ),
                 Padding(
@@ -57,12 +63,7 @@ class HomeScreen extends StatelessWidget {
                           print('Swiped Left');
                         },
                         child: ChoiceButton(
-                            width: 60,
-                            height: 60,
-                            size: 25,
-                            color: Colors.red,
-                            hasGradient: false,
-                            icon: Icons.clear_rounded),
+                            color: Colors.red, icon: Icons.clear_rounded),
                       ),
                       InkWell(
                         onTap: () {
@@ -78,13 +79,7 @@ class HomeScreen extends StatelessWidget {
                             color: Colors.white,
                             icon: Icons.favorite),
                       ),
-                      ChoiceButton(
-                          width: 60,
-                          height: 60,
-                          size: 25,
-                          hasGradient: false,
-                          color: Colors.grey,
-                          icon: Icons.watch_later),
+                      ChoiceButton(color: Colors.grey, icon: Icons.watch_later),
                     ],
                   ),
                 ),

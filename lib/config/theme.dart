@@ -43,13 +43,13 @@ TextTheme textTheme() {
     ),
     bodyText1: TextStyle(
       color: Colors.black,
-      fontSize: 12,
-      fontWeight: FontWeight.bold,
+      fontSize: 14,
+      fontWeight: FontWeight.normal,
     ),
     bodyText2: TextStyle(
       color: Colors.black,
-      fontSize: 10,
-      fontWeight: FontWeight.bold,
+      fontSize: 12,
+      fontWeight: FontWeight.normal,
     ),
   );
 }

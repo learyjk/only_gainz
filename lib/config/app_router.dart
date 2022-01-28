@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:only_gainz/models/models.dart';
 import 'package:only_gainz/screens/home/home_screen.dart';
 import 'package:only_gainz/screens/screens.dart';
 
@@ -8,12 +9,10 @@ class AppRouter {
     print('This is route: ${settings.name}');
 
     switch (settings.name) {
-      case '/':
+      case HomeScreen.routeName:
         return HomeScreen.route();
-      case 'HomeScreen.routeName':
-        return HomeScreen.route();
-      case '/users':
-        return UsersScreen.route();
+      case UsersScreen.routeName:
+        return UsersScreen.route(user: settings.arguments as User);
       default:
         return _errorRoute();
     }
