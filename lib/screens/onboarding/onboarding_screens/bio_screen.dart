@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:only_gainz/screens/onboarding/widgets/custom_image_container.dart';
 import 'package:only_gainz/screens/onboarding/widgets/widgets.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
@@ -29,27 +28,34 @@ class Bio extends StatelessWidget {
               Row(
                 children: [
                   CustomTextContainer(
-                    text: 'test',
+                    text: '💪 Gym',
                   ),
                   CustomTextContainer(
-                    text: 'test',
+                    text: '👙 Tan',
                   ),
                   CustomTextContainer(
-                    text: 'test',
+                    text: '🧺 Laundry',
                   ),
                 ],
               )
             ],
           ),
-          StepProgressIndicator(
-            totalSteps: 6,
-            currentStep: 6,
-            selectedColor: Theme.of(context).primaryColor,
-            unselectedColor: Theme.of(context).backgroundColor,
-          ),
-          CustomButton(
-            text: 'Next Step',
-            tabController: tabController,
+          Column(
+            children: [
+              StepProgressIndicator(
+                totalSteps: 6,
+                currentStep: 6,
+                selectedColor: Theme.of(context).primaryColor,
+                unselectedColor: Theme.of(context).backgroundColor,
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              CustomButton(
+                text: 'Next Step',
+                tabController: tabController,
+              ),
+            ],
           ),
         ],
       ),

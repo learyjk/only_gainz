@@ -31,15 +31,22 @@ class Start extends StatelessWidget {
               ),
             ],
           ),
-          StepProgressIndicator(
-            totalSteps: 6,
-            currentStep: 1,
-            selectedColor: Theme.of(context).primaryColor,
-            unselectedColor: Theme.of(context).backgroundColor,
-          ),
-          CustomButton(
-            text: 'Start',
-            tabController: tabController,
+          Column(
+            children: [
+              StepProgressIndicator(
+                totalSteps: 6,
+                currentStep: 1,
+                selectedColor: Theme.of(context).primaryColor,
+                unselectedColor: Theme.of(context).backgroundColor,
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              CustomButton(
+                text: 'Start',
+                tabController: tabController,
+              ),
+            ],
           ),
         ],
       ),

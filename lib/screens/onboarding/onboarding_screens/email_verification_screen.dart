@@ -23,16 +23,23 @@ class EmailVerification extends StatelessWidget {
               CustomTextField(text: 'ABCXYZ'),
             ],
           ),
-          StepProgressIndicator(
-            totalSteps: 6,
-            currentStep: 3,
-            selectedColor: Theme.of(context).primaryColor,
-            unselectedColor: Theme.of(context).backgroundColor,
-          ),
-          CustomButton(
-            text: 'Next Step',
-            tabController: tabController,
-          ),
+          Column(
+            children: [
+              StepProgressIndicator(
+                totalSteps: 6,
+                currentStep: 3,
+                selectedColor: Theme.of(context).primaryColor,
+                unselectedColor: Theme.of(context).backgroundColor,
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              CustomButton(
+                text: 'Next Step',
+                tabController: tabController,
+              ),
+            ],
+          )
         ],
       ),
     );

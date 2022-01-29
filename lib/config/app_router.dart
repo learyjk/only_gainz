@@ -1,8 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:only_gainz/models/models.dart';
-import 'package:only_gainz/screens/home/home_screen.dart';
-import 'package:only_gainz/screens/onboarding/onboarding_screen.dart';
 import 'package:only_gainz/screens/screens.dart';
 
 class AppRouter {
@@ -16,6 +13,8 @@ class AppRouter {
         return UsersScreen.route(user: settings.arguments as User);
       case OnboardingScreen.routeName:
         return OnboardingScreen.route();
+      case MatchesScreen.routeName:
+        return MatchesScreen.route();
       default:
         return _errorRoute();
     }
