@@ -34,7 +34,8 @@ class Message extends Equatable {
         id: 2,
         senderId: 2,
         receiverId: 1,
-        message: 'I\'m good, thank you.',
+        message:
+            'I\'m good, thank you and this is some more text to make it longer and longer and longer and overflow a bit.',
         dateTime: DateTime.now(),
         timeString: DateFormat('jm').format(DateTime.now())),
     Message(

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:only_gainz/models/models.dart';
+import 'package:only_gainz/screens/chat_screen/chat_screen.dart';
 import 'package:only_gainz/widgets/widgets.dart';
+import 'package:only_gainz/screens/screens.dart';
 
 class MatchesScreen extends StatelessWidget {
   static const String routeName = '/matches';
@@ -78,31 +80,38 @@ class MatchesScreen extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return Container(
                     margin: const EdgeInsets.only(bottom: 10.0),
-                    child: Row(
-                      children: [
-                        UserImageSmall(
-                            imageUrl:
-                                activeMatches[index].matchedUser.imageUrls[0]),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 10.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                activeMatches[index].matchedUser.name,
-                                style: Theme.of(context).textTheme.headline5,
-                              ),
-                              SizedBox(
-                                height: 5,
-                              ),
-                              Text(activeMatches[index]
-                                  .chat![0]
-                                  .messages[0]
-                                  .message),
-                            ],
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.pushNamed(context, ChatScreen.routeName,
+                            arguments: activeMatches[index]);
+                      },
+                      child: Row(
+                        children: [
+                          UserImageSmall(
+                              imageUrl: activeMatches[index]
+                                  .matchedUser
+                                  .imageUrls[0]),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  activeMatches[index].matchedUser.name,
+                                  style: Theme.of(context).textTheme.headline5,
+                                ),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Text(activeMatches[index]
+                                    .chat![0]
+                                    .messages[0]
+                                    .message),
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   );
                 },
