@@ -6,6 +6,7 @@ ThemeData theme() {
       fontFamily: 'Avenir',
       textTheme: textTheme(),
       primaryColor: Colors.pink,
+      backgroundColor: Colors.grey[200]!,
       accentColor: Colors.pinkAccent);
 }
 
@@ -43,12 +44,12 @@ TextTheme textTheme() {
     ),
     bodyText1: TextStyle(
       color: Colors.black,
-      fontSize: 14,
+      fontSize: 16,
       fontWeight: FontWeight.normal,
     ),
     bodyText2: TextStyle(
       color: Colors.black,
-      fontSize: 12,
+      fontSize: 14,
       fontWeight: FontWeight.normal,
     ),
   );

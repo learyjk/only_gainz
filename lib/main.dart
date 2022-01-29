@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         title: 'Only Gainz',
         theme: theme(),
         onGenerateRoute: AppRouter.onGenerateRoute,
-        initialRoute: HomeScreen.routeName,
+        initialRoute: OnboardingScreen.routeName,
         home: HomeScreen(),
       ),
     );
