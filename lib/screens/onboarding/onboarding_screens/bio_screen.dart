@@ -9,6 +9,8 @@ class Bio extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = TextEditingController();
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 30.0),
       child: Column(
@@ -20,6 +22,7 @@ class Bio extends StatelessWidget {
               CustomTextHeader(text: 'Shoot your shot'),
               CustomTextField(
                 text: 'Write your best jokes here',
+                controller: controller,
               ),
               SizedBox(
                 height: 50,

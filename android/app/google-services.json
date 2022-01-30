@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "407334712686",
+    "project_id": "only-gainz",
+    "storage_bucket": "only-gainz.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:407334712686:android:5d416fd28f4d10cfe07d7f",
+        "android_client_info": {
+          "package_name": "com.keeganleary.only_gainz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "407334712686-a2mmdin368jssd609nd3fteh1280ia97.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDurmAtM4inb_I20qTboNq4NYSCMR1UmM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "407334712686-a2mmdin368jssd609nd3fteh1280ia97.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "407334712686-l8afi65mp27tkk84rkt5usgdgq849p5l.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.keeganleary.onlyGainz"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

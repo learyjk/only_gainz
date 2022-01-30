@@ -9,6 +9,8 @@ class Demo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = TextEditingController();
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 30.0),
       child: Column(
@@ -28,7 +30,7 @@ class Demo extends StatelessWidget {
                 height: 50,
               ),
               CustomTextHeader(text: 'How old are you?'),
-              CustomTextField(text: '30'),
+              CustomTextField(text: '30', controller: controller),
             ],
           ),
           Column(

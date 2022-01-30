@@ -9,6 +9,8 @@ class Email extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final emailController = TextEditingController();
+    final passwordController = TextEditingController();
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 30.0),
       child: Column(
@@ -18,7 +20,13 @@ class Email extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CustomTextHeader(text: 'What\'s your email address?'),
-              CustomTextField(text: 'arslan@thegainz.net'),
+              CustomTextField(
+                  text: 'arslan@thegainz.net', controller: emailController),
+              SizedBox(
+                height: 100,
+              ),
+              CustomTextHeader(text: 'Choose a password'),
+              CustomTextField(text: 'patrick', controller: passwordController),
             ],
           ),
           Column(
@@ -35,6 +43,8 @@ class Email extends StatelessWidget {
               CustomButton(
                 text: 'Next Step',
                 tabController: tabController,
+                emailController: emailController,
+                passwordController: passwordController,
               ),
             ],
           )

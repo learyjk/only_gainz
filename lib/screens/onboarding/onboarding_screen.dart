@@ -37,31 +37,33 @@ class OnboardingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: tabs.length,
-      child: Builder(builder: (
-        BuildContext context,
-      ) {
-        final TabController tabController = DefaultTabController.of(context)!;
-        tabController.addListener(() {
-          if (!tabController.indexIsChanging) {}
-        });
+      child: Builder(
+        builder: (
+          BuildContext context,
+        ) {
+          final TabController tabController = DefaultTabController.of(context)!;
+          tabController.addListener(() {
+            if (!tabController.indexIsChanging) {}
+          });
 
-        return Scaffold(
-          appBar: CustomAppBar(
-            title: '🚩',
-            hasActions: false,
-          ),
-          body: TabBarView(
-            children: [
-              Start(tabController: tabController),
-              Email(tabController: tabController),
-              EmailVerification(tabController: tabController),
-              Demo(tabController: tabController),
-              Pictures(tabController: tabController),
-              Bio(tabController: tabController),
-            ],
-          ),
-        );
-      }),
+          return Scaffold(
+            appBar: CustomAppBar(
+              title: '🚩',
+              hasActions: false,
+            ),
+            body: TabBarView(
+              children: [
+                Start(tabController: tabController),
+                Email(tabController: tabController),
+                EmailVerification(tabController: tabController),
+                Demo(tabController: tabController),
+                Pictures(tabController: tabController),
+                Bio(tabController: tabController),
+              ],
+            ),
+          );
+        },
+      ),
     );
   }
 }
