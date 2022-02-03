@@ -1,4 +1,4 @@
-import 'package:only_gainz/repositories/base_auth_repository.dart';
+import 'package:only_gainz/repositories/auth/base_auth_repository.dart';
 import 'package:firebase_auth/firebase_auth.dart' as auth;
 
 class AuthRepository extends BaseAuthRepository {

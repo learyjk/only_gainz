@@ -6,7 +6,7 @@ import 'package:only_gainz/blocs/swipe/swipe_bloc.dart';
 import 'package:only_gainz/config/app_router.dart';
 import 'package:only_gainz/config/theme.dart';
 import 'package:only_gainz/models/models.dart';
-import 'package:only_gainz/repositories/auth_repository.dart';
+import 'package:only_gainz/repositories/auth/auth_repository.dart';
 import 'screens/screens.dart';
 import 'config/theme.dart';
 

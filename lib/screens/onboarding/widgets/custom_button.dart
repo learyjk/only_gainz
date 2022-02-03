@@ -1,19 +1,18 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:only_gainz/cubit/signup/signup_cubit.dart';
+import 'package:provider/src/provider.dart';
 
 class CustomButton extends StatelessWidget {
   final TabController tabController;
-  final TextEditingController? emailController;
-  final TextEditingController? passwordController;
+
   final String text;
 
-  const CustomButton(
-      {Key? key,
-      required this.tabController,
-      required this.text,
-      this.emailController,
-      this.passwordController})
-      : super(key: key);
+  const CustomButton({
+    Key? key,
+    required this.tabController,
+    required this.text,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,15 +25,10 @@ class CustomButton extends StatelessWidget {
             ])),
         child: ElevatedButton(
           onPressed: () async {
-            if (emailController != null && passwordController != null) {
-              await FirebaseAuth.instance
-                  .createUserWithEmailAndPassword(
-                      email: emailController!.text,
-                      password: passwordController!.text)
-                  .then((value) => print("User Added"))
-                  .catchError((error) => print("Failed to add user."));
-            }
             tabController.animateTo(tabController.index + 1);
+            if (tabController.index == 2) {
+              context.read<SignupCubit>().signupWithCredentials();
+            }
           },
           child: Container(
             width: double.infinity,
